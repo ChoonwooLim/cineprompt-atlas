@@ -25,7 +25,7 @@ import {
   PreviewPoster,
   PreviewPlayer,
   CameraLab,
-  renderedCameraIds,
+  renderedPreviewIds,
 } from '@/components/preset-preview';
 
 import promptsData from '@/data/prompts.json';
@@ -277,6 +277,7 @@ function PromptDetail({
 export default function Home() {
   const [activePreview, setActivePreview] = useState<string | null>(null);
   const [showLab, setShowLab] = useState(false);
+  const [renderedOnly, setRenderedOnly] = useState(false);
   const [pageSize, setPageSize] = useState(24);
   const [category, setCategory] = useState('전체 라이브러리');
   const [query, setQuery] = useState('');
@@ -417,10 +418,11 @@ export default function Home() {
         (level === '전체 난이도' || item.level === level) &&
         (engine === '모든 엔진' || item.engine === engine) &&
         (!favoritesOnly || favorites.has(item.id)) &&
-        (!keyword || haystack.includes(keyword))
+        (!keyword || haystack.includes(keyword)) &&
+        (!renderedOnly || renderedPreviewIds.has(item.id))
       );
     });
-  }, [category, engine, favorites, favoritesOnly, level, query]);
+  }, [category, engine, favorites, favoritesOnly, level, query, renderedOnly]);
 
   return (
     <SidebarProvider>
@@ -584,7 +586,8 @@ export default function Home() {
               level !== '전체 난이도' ||
               engine !== '모든 엔진' ||
               query ||
-              favoritesOnly) && (
+              favoritesOnly ||
+              renderedOnly) && (
               <Button
                 variant="ghost"
                 className="h-9 text-[#8e96a1] hover:bg-white/8 hover:text-white"
@@ -594,6 +597,7 @@ export default function Home() {
                   setEngine('모든 엔진');
                   setQuery('');
                   setFavoritesOnly(false);
+                  setRenderedOnly(false);
                 }}
               >
                 필터 초기화
@@ -602,15 +606,25 @@ export default function Home() {
           </section>
 
           <div className="library-toolbar">
+            <Button
+              variant="outline"
+              aria-pressed={renderedOnly}
+              onClick={() => {
+                setRenderedOnly(!renderedOnly);
+                setPageSize(24);
+              }}
+            >
+              실제 렌더만 · {renderedPreviewIds.size}
+            </Button>
             <p>
-              카드에서 동작을 살펴보고, 상세에서 구간별 제작 지시를 확인하세요.
+              실제 렌더는 전후 비교로, 미제공 항목은 제작 브리프로 구분합니다.
             </p>
             <Button
               variant="outline"
               onClick={() => setShowLab(!showLab)}
               aria-expanded={showLab}
             >
-              {showLab ? '카메라 비교 닫기' : '실제 Blender 카메라 비교'}
+              {showLab ? '비교 실험실 닫기' : '렌더 비교 실험실'}
             </Button>
           </div>
           {showLab && <CameraLab />}
@@ -648,9 +662,9 @@ export default function Home() {
                         active={activePreview === item.id}
                       />
                       <span className="preview-chip">
-                        {renderedCameraIds.has(item.id)
-                          ? 'Blender 예제'
-                          : '원리 미리보기'}
+                        {renderedPreviewIds.has(item.id)
+                          ? '실제 렌더 · 전후 비교'
+                          : '제작 브리프'}
                       </span>
                     </div>
                     <div className="p-4">
@@ -678,7 +692,9 @@ export default function Home() {
                           {item.level} · {item.duration}
                         </span>
                         <span className="font-mono tracking-wider text-[#aeb4bd]">
-                          미리보기 · 프롬프트 →
+                          {renderedPreviewIds.has(item.id)
+                            ? '전후 비교 · 프롬프트 →'
+                            : '제작 브리프 · 프롬프트 →'}
                         </span>
                       </div>
                     </div>
@@ -708,8 +724,19 @@ export default function Home() {
             <div className="mt-12 border-y border-white/8 py-14 text-center">
               <p className="text-lg text-white">검색 결과가 없습니다.</p>
               <p className="mt-2 text-sm text-[#777f8a]">
-                필터를 초기화하거나 다른 촬영 용어를 입력해 보세요.
+                {renderedOnly
+                  ? '현재 조건에 실제 렌더가 없습니다. 렌더 필터를 해제하면 제작 브리프를 볼 수 있습니다.'
+                  : '필터를 초기화하거나 다른 촬영 용어를 입력해 보세요.'}
               </p>
+              {renderedOnly && (
+                <Button
+                  className="mt-4"
+                  variant="outline"
+                  onClick={() => setRenderedOnly(false)}
+                >
+                  제작 브리프 포함해서 보기
+                </Button>
+              )}
             </div>
           )}
 
