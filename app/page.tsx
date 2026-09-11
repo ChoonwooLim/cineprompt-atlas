@@ -320,7 +320,7 @@ export default function Home() {
             </SidebarMenu></SidebarGroupContent>
           </SidebarGroup>
         </SidebarContent>
-        <SidebarFooter className="border-t border-white/8 p-4"><div className="rounded-md border border-white/10 bg-white/[0.03] p-3"><p className="font-mono text-[11px] text-[#e5ff54]">72 PROMPTS · 24 SOURCES</p><p className="mt-1 text-xs leading-5 text-[#7f8792]">공개 제작 원칙을 검증해 독창적인 한국어 프롬프트로 재구성</p></div></SidebarFooter>
+        <SidebarFooter className="border-t border-white/8 p-4"><div className="rounded-md border border-white/10 bg-white/[0.03] p-3"><p className="font-mono text-[11px] text-[#e5ff54]">{prompts.length} PROMPTS · {sources.length} SOURCES</p><p className="mt-1 text-xs leading-5 text-[#7f8792]">공개 제작 원칙을 검증해 독창적인 한국어 프롬프트로 재구성</p></div></SidebarFooter>
       </Sidebar>
 
       <SidebarInset className="min-w-0 bg-[#111316] text-white">
