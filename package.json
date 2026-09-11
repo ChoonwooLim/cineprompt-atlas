@@ -1,5 +1,5 @@
 {
-  "name": "sites-project",
+  "name": "cineprompt-atlas",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -10,7 +10,9 @@
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "build:node": "CINEPROMPT_RUNTIME=node vinext build",
+    "start:node": "vinext start"
   },
   "dependencies": {
     "react": "19.2.6",

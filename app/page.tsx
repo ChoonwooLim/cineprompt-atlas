@@ -344,11 +344,11 @@ export default function Home() {
           </section>
 
           <section aria-label="프롬프트 목록" className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {visible.map((item, index) => {
+            {visible.map((item) => {
               const visual = thumbnailMap[item.thumbnailTheme] ?? thumbnailMap.camera;
               return (
                 <Sheet key={item.id}>
-                  <SheetTrigger render={<button className="group overflow-hidden rounded-lg border border-white/10 bg-[#17191d] text-left transition hover:-translate-y-0.5 hover:border-[#e5ff54]/45 hover:bg-[#1b1e22] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e5ff54]" />}>
+                  <SheetTrigger render={<button aria-label={`${item.title} 프롬프트 열기`} className="group overflow-hidden rounded-lg border border-white/10 bg-[#17191d] text-left transition hover:-translate-y-0.5 hover:border-[#e5ff54]/45 hover:bg-[#1b1e22] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e5ff54]" />}>
                     <div aria-hidden="true" className="prompt-thumb" style={{ backgroundImage: `url(${visual.image})`, backgroundPosition: visual.position }}><span className="shot-number">{item.id.toUpperCase()}</span><span className="lens-readout">{item.aspectRatio} / 24FPS</span></div>
                     <div className="p-4"><div className="mb-3 flex flex-wrap gap-2"><Badge className="border-white/10 bg-white/5 text-[#b7bdc6]">{item.category}</Badge><Badge className="border-[#e5ff54]/20 bg-[#e5ff54]/8 text-[#dff957]">{item.engine}</Badge>{favorites.has(item.id) && <Badge className="border-transparent bg-transparent px-1 text-[#e5ff54]"><BookmarkCheck /></Badge>}</div><h2 className="text-lg font-semibold tracking-tight text-white">{item.title}</h2><p className="mt-2 line-clamp-2 text-sm leading-6 text-[#8e96a1]">{item.summary}</p><div className="mt-4 flex items-center justify-between border-t border-white/8 pt-3 text-xs text-[#6f7681]"><span>{item.level} · {item.duration}</span><span className="font-mono tracking-wider text-[#aeb4bd]">OPEN PROMPT →</span></div></div>
                   </SheetTrigger>

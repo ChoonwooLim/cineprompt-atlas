@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.next
+.vinext
+.wrangler
+.sites-runtime
+.env*
+*.pem
+work
+outputs
+npm-debug.log*

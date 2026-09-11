@@ -35,6 +35,15 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async () => {
+  // Orbitron runs a Node HTTP server, not a Cloudflare Worker runtime.
+  // Keep the Sites/Workers build unchanged unless explicitly requested.
+  if (process.env.CINEPROMPT_RUNTIME === 'node') {
+    return {
+      css: { postcss: { plugins: [tailwindcss()] } },
+      plugins: [vinext()],
+    };
+  }
+
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= 'false';
