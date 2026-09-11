@@ -1,55 +1,34 @@
-# Actual effect comparisons
+# Preview workbench
 
-The previous Workbench clips and 222 schematic animations have been removed. They did not reliably demonstrate the requested optical effects. All 240 original prompt records, IDs, variable substitutions and references are preserved.
+All 240 prompt records retain their IDs, text, variables, and source links. The old category sprite thumbnails have been replaced by a mixture of original Blender camera studies and interactive explanatory diagrams.
 
-## Current coverage
-
-- **33 paired render studies:** 13 camera and 20 lighting entries. Each has a physically rendered reference and changed state, 1600×900 WebP, Cycles 64 samples with denoising and AgX Medium High Contrast.
-- Camera IDs: 01, 02, 03, 04, 05, 06, 07, 09, 11, 15, 16, 17, 19. Lighting IDs: 01–20.
-- **207 entries do not have an actual render yet.** Their cards and details explicitly say so and show the production brief. No generic diagrams or unrelated clips are presented as effect previews.
-- These are controlled technique studies using Blender's Suzanne reference mesh and original procedural test geometry. They are **not full executions of the 240 filmmaking briefs**. Two stills cannot establish animation timing, acting, simulation quality, path safety, or final production readiness.
-- `data/preview-studies.json` records actual changes, observation guidance, limitations, resolution and rendering conditions for each entry.
-- In four lighting isolation studies, flags/occluders are hidden from direct camera rays while still participating in shadows/reflections. This is disclosed in the individual methodology.
-
-## Interface
-
-- Wipe comparison, side-by-side, reference only and applied only; a labeled native range input supports touch and keyboard.
-- Native modal enlargement supports Escape, close button, before/after selection, and links to original images.
-- An actual-render-only filter exposes available studies. Empty filtered categories let the user restore production briefs.
-- Cards use 480×270 thumbnails with lazy loading, not full-size render pairs. Full-resolution files load only in an opened detail or comparison lab. Only 24 cards are initially mounted.
-- No automatic video/animation playback. Pointer hover reveals the applied still; reduced-motion preferences disable the transition.
+- 18 camera entries have original Workbench video/poster pairs (camera-04 rack focus and camera-18 mirror reflection use diagrams because Workbench does not demonstrate those optical effects).
+- A separate three-video common-scene study compares dolly, zoom, and dolly zoom. These are technique demonstrations, not claims that each entire Korean production brief has been executed.
+- The other 222 entries use category-specific vector diagrams, semantic operation labels, and the original production-direction sentences. They simplify a technique and do not simulate all scene details or measure physical/rendering correctness.
+- Cards play on pointer hover only when reduced motion is off. On touch devices, opening a card exposes video controls or a labeled play/pause button, keyboard/touch timeline, and three direction steps. Rendered video steps seek within the media after metadata loads.
+- Only 24 cards render initially, with more on demand. Videos use preload=none and JPEG posters; no video is fetched for an inactive card. Media fits the existing static nginx deployment (21 clips total, about 5 MB).
+- Mobile detail panels use the full viewport width. Favorites remain device-local.
 
 ## Reproduction
 
-Requires Blender 5.2.1 LTS and ffmpeg on PATH. Metal is selected when available; otherwise Cycles uses CPU. The scene is rebuilt independently for each side with deterministic seeds, identical view transform and fixed exposure. Lighting pairs keep camera/materials fixed. Camera studies explicitly vary camera parameters.
+Blender 5.2.1 LTS, Workbench, 800×450, 96 frames at 24fps. Original geometry; no external assets.
 
-```sh
-blender -b -t 8 --python scripts/render-effect-studies.py
-python3 scripts/prepare-preview-assets.py
-```
+    blender -b -t 4 --python scripts/render-camera-lab.py
+    blender -b -t 4 --python scripts/render-camera-lab.py -- --catalog
+    python3 scripts/encode-previews.py
 
-Existing renders are skipped. To regenerate selected studies:
+The ignored previews-work directory holds source frame sequences and representative .blend scene snapshots. The Python script is the authoritative animation recipe; scene snapshots preserve only the final pose, not a baked animation.
 
-```sh
-blender -b -t 8 --python scripts/render-effect-studies.py -- camera-04 lighting-11 --force
-python3 scripts/prepare-preview-assets.py
-```
+## Verification
 
-The ignored `previews-work/studies` directory holds full-size PNG intermediates. The checked-in Python recipe is authoritative; rendered .blend scene files are not required by the app.
+    node tests/preview-catalog.mjs
+    npx tsc --noEmit --incremental false
+    npm run build:orbitron
 
-## Validation and limits
+The catalog check renders every diagram at both endpoints, checks 12×20 IDs, variable keys, source IDs, and linked video/poster existence. It does not certify the artistic or physical accuracy of diagrams.
 
-```sh
-node tests/preview-catalog.mjs
-python3 tests/preview-images.py  # Pillow required
-npx tsc --noEmit --incremental false
-npm run build:orbitron
-```
-
-The catalog test checks preservation of 12×20 records, source references and variables, server-renders every card/detail, verifies comparison controls and scope disclosure, rejects identical pairs, and rejects misleading image substitutes for unavailable entries. Decoded images are checked for dimensions, file integrity, and pair differences. Contact sheets of every pair and enlarged focus/glass/shadow examples are visually inspected; low-contrast or obstructed comparisons are rerendered. These checks do not certify full production briefs.
-
-Browser interaction testing has not been repeated for this revision. Native controls and responsive layout are implemented; actual phone interaction still needs device testing. Deployment includes container health and HTTP verification of the actual new assets.
+Browser checks: search/filter counts; open a video example and a diagram; play/pause; keyboard End on the timeline; variable substitution and clipboard; common-scene comparison tabs; narrow viewport without overflow. Confirm HTTP byte-range responses for MP4 in the deployed nginx container.
 
 ## Mobile conversation access
 
-The production app URL is the library, not this Codex conversation. Continue this task through ChatGPT mobile Remote after pairing the desktop host in Settings → Connections → Control this Mac. Pairing still requires the user; the computer-use tool cannot operate the Codex app settings. Keep the host app online and awake.
+This app URL provides the library, not this Codex conversation. Continue the conversation through ChatGPT mobile Remote after pairing the desktop host in Settings → Connections → Control this Mac. This must be completed by the user; the computer-use tool cannot operate the Codex app's settings. Keep the host app online and awake.
