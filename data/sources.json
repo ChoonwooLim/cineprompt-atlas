@@ -1,0 +1,356 @@
+[
+  {
+    "id": "S01",
+    "title": "Cameras — Blender 4.4 Manual",
+    "publisher": "Blender Foundation",
+    "date": "미상",
+    "url": "https://docs.blender.org/manual/en/4.4/render/cameras.html",
+    "principles": [
+      "초점거리와 센서 크기를 함께 지정한다.",
+      "피사계 심도는 초점 대상과 조리개를 명시한다."
+    ],
+    "version": "4.4",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S02",
+    "title": "Virtual Visualization Series – Pitchvis & Previs",
+    "publisher": "THE THIRD FLOOR",
+    "date": "미상",
+    "url": "https://thethirdfloorinc.com/3863/virtual-visualization-series-pitchvis-previs/",
+    "principles": [
+      "프리비즈는 제작 전 연출을 시각화하고 반복 검토하는 과정이다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S03",
+    "title": "Virtual Visualization Series – Techvis",
+    "publisher": "THE THIRD FLOOR",
+    "date": "2020-04-13",
+    "url": "https://thethirdfloorinc.com/3879/virtual-visualization-series-techvis/",
+    "principles": [
+      "실측 규모의 세트와 카메라·배우 관계를 기술 자료로 전환한다.",
+      "카메라 높이·이동 속도·그린스크린 범위 등을 검토한다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S04",
+    "title": "Previsualisation (previs) artist",
+    "publisher": "ScreenSkills",
+    "date": "미상",
+    "url": "https://www.screenskills.com/job-profiles/roles/previsualisation-previs-artist/",
+    "principles": [
+      "샷의 규모·타이밍·인물 움직임을 3D 애니매틱과 편집으로 계획한다.",
+      "촬영·편집·데이터 관리가 프리비즈 역량에 포함된다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S05",
+    "title": "ARRI Lighting Handbook, Fourth Edition",
+    "publisher": "ARRI / Bill Holshevnikoff",
+    "date": "2016",
+    "url": "https://www.arri.com/resource/blob/83996/409091c612f371b0c68b41d9dcb636db/arri-lighting-handbook-english-data.pdf",
+    "principles": [
+      "키·필·분리·배경광의 역할을 구분한다.",
+      "광원의 상대적 크기, 그림자 경계, 반사 하이라이트, 스필 제어가 형태를 만든다."
+    ],
+    "version": null,
+    "access": "PDF 본문 6–17쪽 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S06",
+    "title": "Animation — Shot Production",
+    "publisher": "Blender Studio",
+    "date": "미상",
+    "url": "https://studio.blender.org/tools/pipeline-overview/shot-production/animation",
+    "principles": [
+      "브리핑→블로킹→폴리싱→샷 인계 순서로 작업한다.",
+      "접촉·관통·프레임레이트·모션블러 경계와 자산 상태를 검수한다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S07",
+    "title": "Design Principles",
+    "publisher": "Blender Studio",
+    "date": "미상",
+    "url": "https://studio.blender.org/tools/overview/design-principles",
+    "principles": [
+      "편집을 기준으로 샷과 자산의 변경을 관리한다.",
+      "검토와 버전 관리를 제작 파이프라인에 포함한다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S08",
+    "title": "Follow Path Constraint — Blender 5.0 Manual",
+    "publisher": "Blender Foundation",
+    "date": "2026-02-06",
+    "url": "https://docs.blender.org/manual/en/5.0/animation/constraints/relationship/follow_path.html",
+    "principles": [
+      "Curve의 위치를 시간 또는 Offset Factor로 제어한다.",
+      "경로 이동과 타깃 추적을 조합하고 축·변환 오프셋을 검토한다."
+    ],
+    "version": "5.0",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S09",
+    "title": "F-Curves: Introduction — Blender 2.80 Manual",
+    "publisher": "Blender Foundation",
+    "date": "미상",
+    "url": "https://docs.blender.org/manual/en/2.80/editors/graph_editor/fcurves/introduction.html",
+    "principles": [
+      "키프레임 사이 보간으로 시간에 따른 속성 변화를 제어한다.",
+      "상수·선형·베지어 보간과 오버슈트 억제를 용도에 맞게 선택한다."
+    ],
+    "version": "2.80; 보간 원칙만 사용",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S10",
+    "title": "Blender 4.2 LTS: EEVEE",
+    "publisher": "Blender Developers",
+    "date": "미상",
+    "url": "https://developer.blender.org/docs/release_notes/4.2/eevee/",
+    "principles": [
+      "4.2에서 EEVEE가 재작성되었으므로 과거 튜토리얼 설정을 그대로 적용하지 않는다."
+    ],
+    "version": "4.2",
+    "access": "검색 색인 요약 확인; 원문 열기 실패",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S11",
+    "title": "EEVEE — Blender 5.3 Manual",
+    "publisher": "Blender Foundation",
+    "date": "2026-09-10",
+    "url": "https://docs.blender.org/manual/en/dev/render/eevee/",
+    "principles": [
+      "EEVEE는 상호작용성과 속도에 중점을 둔 래스터 기반 렌더러다.",
+      "Cycles와 재질 노드를 공유하지만 동일한 광수송 결과를 보장하지 않는다."
+    ],
+    "version": "5.3 개발 문서; 릴리스 기능 보장 아님",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S12",
+    "title": "Sampling — Blender 5.0 Manual",
+    "publisher": "Blender Foundation",
+    "date": "미상",
+    "url": "https://docs.blender.org/manual/id/5.0/render/cycles/render_settings/sampling.html",
+    "principles": [
+      "Noise Threshold 기반 적응형 샘플링과 최대 샘플을 구분한다.",
+      "디노이징을 사용해 샘플 비용을 줄이되 디테일을 검토한다."
+    ],
+    "version": "5.0",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S13",
+    "title": "Blender 4.0: Color Management",
+    "publisher": "Blender Developers",
+    "date": "미상",
+    "url": "https://developer.blender.org/docs/release_notes/4.0/color_management/",
+    "principles": [
+      "AgX는 4.0 새 파일에서 Filmic을 대신하는 기본 뷰 변환으로 도입되었다.",
+      "강한 노출에서 밝은 색의 처리와 화면 표시 변환을 구분한다."
+    ],
+    "version": "4.0",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S14",
+    "title": "Passes — Blender 4.0 Manual",
+    "publisher": "Blender Foundation",
+    "date": "미상",
+    "url": "https://docs.blender.org/manual/id/4.0/render/layers/passes.html",
+    "principles": [
+      "Cryptomatte로 오브젝트·재질·자산 마스크를 만들 수 있다.",
+      "AOV로 필요한 셰이더 값을 별도 패스로 출력한다."
+    ],
+    "version": "4.0; 사용 엔진별 지원 재확인",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S15",
+    "title": "File Formats — Blender 2.80 Manual",
+    "publisher": "Blender Foundation",
+    "date": "미상",
+    "url": "https://docs.blender.org/manual/en/2.80/render/output/file_formats.html",
+    "principles": [
+      "이미지 시퀀스 렌더 후 영상 인코딩은 중단 복구와 재인코딩에 유리하다.",
+      "손실 압축은 최종 전달 단계에 적용한다."
+    ],
+    "version": "2.80; 파일 전략 원칙만 사용",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S16",
+    "title": "Image/Sequence Strip — Blender 3.0 Manual",
+    "publisher": "Blender Foundation",
+    "date": "미상",
+    "url": "https://docs.blender.org/manual/en/3.0/video_editing/sequencer/strips/image.html",
+    "principles": [
+      "시퀀스 프레임 순서와 누락 프레임을 확인한다.",
+      "입력과 출력 화면비 차이는 맞춤·채움·늘이기에 서로 다른 결과를 낸다."
+    ],
+    "version": "3.0; UI 명칭 재확인",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S17",
+    "title": "What is ACES?",
+    "publisher": "ACESCentral / Academy Software Foundation",
+    "date": "미상",
+    "url": "https://acescentral.com/",
+    "principles": [
+      "ACES는 제작·후반·보존 사이의 색 관리와 이미지 교환을 위한 체계다.",
+      "작업 공간과 디스플레이 변환을 구분한다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S18",
+    "title": "ACES VFX Quick Start Guide",
+    "publisher": "ACES",
+    "date": "2018-08-13",
+    "url": "https://community.acescentral.com/uploads/default/original/1X/25ec1472d70b169ceabb215beacdd501d1a27fac.pdf",
+    "principles": [
+      "입력 변환과 장면 기준 선형 데이터, 출력 변환을 명확히 연결한다."
+    ],
+    "version": "역사적 가이드; 현행 ACES 구성 검증 필요",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S19",
+    "title": "Using ACES Reference Images",
+    "publisher": "ACESCentral",
+    "date": "미상",
+    "url": "https://acescentral.com/knowledge-base-2/using-aces-reference-images/",
+    "principles": [
+      "참조 이미지를 사용해 색 변환 구현을 검증한다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S20",
+    "title": "Understanding Focal Length",
+    "publisher": "Nikon",
+    "date": "2025-12",
+    "url": "https://www.nikonusa.com/learn-and-explore/c/tips-and-techniques/understanding-focal-length",
+    "principles": [
+      "초점거리는 화각과 배율에 영향을 준다.",
+      "같은 렌즈도 센서 포맷과 함께 해석해야 한다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S21",
+    "title": "Shutter — KOMODO Operation Guide",
+    "publisher": "RED",
+    "date": "미상",
+    "url": "https://docs.red.com/955-0196/955-0196_V1.7%20Rev-B%20RED%20PS%2C%20KOMODO%20Operation%20Guide%20HTML/Content/4_Menus/01_Image_LUT/Shutter.htm",
+    "principles": [
+      "셔터를 시간 또는 각도로 기술할 수 있다."
+    ],
+    "version": "KOMODO v1.7",
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S22",
+    "title": "What is the 180 Degree Rule in Film? Crossing the Line with Purpose",
+    "publisher": "StudioBinder / SC Lannom",
+    "date": "2025-03-05",
+    "url": "https://www.studiobinder.com/blog/what-is-the-180-degree-rule-film/",
+    "principles": [
+      "시선축 한쪽에서 촬영하면 좌우 공간 관계를 유지하기 쉽다.",
+      "축 넘기는 의도와 전환 단서를 갖고 사용한다."
+    ],
+    "version": null,
+    "access": "공개 원문 또는 검색 색인 본문 확인",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S23",
+    "title": "Prompt Templates",
+    "publisher": "PatrykIti / blender-ai-mcp",
+    "date": "미상",
+    "url": "https://github.com/PatrykIti/blender-ai-mcp/blob/main/_docs/_PROMPTS/README.md",
+    "principles": [
+      "자연어 작업을 계획·빌드·검수 단계로 나누는 공개 프롬프트 구조를 참고했다.",
+      "도구의 성공 응답과 실제 공간적 완성도 검증은 다르다."
+    ],
+    "version": null,
+    "access": "공개 저장소 README 원문 확인; 도구 미설치·실행 안 함",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  },
+  {
+    "id": "S24",
+    "title": "blender-mcp-server: Example Prompts",
+    "publisher": "djeada",
+    "date": "미상",
+    "url": "https://github.com/djeada/blender-mcp-server",
+    "principles": [
+      "객체 이름·좌표·재질·렌더 크기·출력 위치를 명시하는 공개 명령 패턴을 참고했다."
+    ],
+    "version": null,
+    "access": "공개 저장소 README 원문 확인; 도구 미설치·실행 안 함",
+    "accessedAt": "2026-09-11",
+    "type": "primary"
+  }
+]
