@@ -35,7 +35,7 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async () => {
-  // Orbitron runs a Node HTTP server, not a Cloudflare Worker runtime.
+  // Optional Node HTTP server build, separate from the Orbitron static build.
   // Keep the Sites/Workers build unchanged unless explicitly requested.
   if (process.env.CINEPROMPT_RUNTIME === 'node') {
     return {

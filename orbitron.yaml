@@ -1,0 +1,11 @@
+project:
+  name: cineprompt-atlas
+build:
+  dockerfile: Dockerfile
+services:
+  - name: cineprompt-atlas
+    type: web
+    runtime: node
+    port: 3000
+healthcheck:
+  path: /healthz
